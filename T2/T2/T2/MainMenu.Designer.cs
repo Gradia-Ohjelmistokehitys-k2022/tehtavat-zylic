@@ -99,7 +99,7 @@
             buttonPing.UseVisualStyleBackColor = true;
             buttonPing.Click += buttonPing_Click;
             // 
-            // Form1
+            // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -111,9 +111,9 @@
             Controls.Add(dtpStartDate);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            Name = "MainMenu";
+            Text = "Bitcoin Analyzer";
+            Load += MainMenu_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

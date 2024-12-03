@@ -30,8 +30,11 @@ namespace T2.Classes
 
             response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadAsStringAsync();
-        }
+            string content = await response.Content.ReadAsStringAsync();
 
+            dynamic parsedResponse = JsonConvert.DeserializeObject(content);
+
+            return parsedResponse.gecko_says;
+        }
     }
 }
