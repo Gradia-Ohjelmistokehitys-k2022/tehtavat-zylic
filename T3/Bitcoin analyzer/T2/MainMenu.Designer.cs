@@ -34,14 +34,17 @@
             dtpEndDate = new DateTimePicker();
             buttonFetchData = new Button();
             dataGridView1 = new DataGridView();
-            buttonPing = new Button();
+            menuStrip1 = new MenuStrip();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            pingToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 397);
+            label1.Location = new Point(657, 358);
             label1.Name = "label1";
             label1.Size = new Size(61, 15);
             label1.TabIndex = 0;
@@ -50,7 +53,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(212, 397);
+            label2.Location = new Point(657, 402);
             label2.Name = "label2";
             label2.Size = new Size(57, 15);
             label2.TabIndex = 1;
@@ -58,23 +61,23 @@
             // 
             // dtpStartDate
             // 
-            dtpStartDate.Location = new Point(6, 415);
+            dtpStartDate.Location = new Point(657, 376);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(200, 23);
             dtpStartDate.TabIndex = 2;
             // 
             // dtpEndDate
             // 
-            dtpEndDate.Location = new Point(212, 415);
+            dtpEndDate.Location = new Point(657, 420);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(200, 23);
             dtpEndDate.TabIndex = 3;
             // 
             // buttonFetchData
             // 
-            buttonFetchData.Location = new Point(418, 415);
+            buttonFetchData.Location = new Point(657, 454);
             buttonFetchData.Name = "buttonFetchData";
-            buttonFetchData.Size = new Size(75, 23);
+            buttonFetchData.Size = new Size(200, 23);
             buttonFetchData.TabIndex = 4;
             buttonFetchData.Text = "Fetch Data";
             buttonFetchData.UseVisualStyleBackColor = true;
@@ -83,38 +86,54 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(12, 228);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 345);
+            dataGridView1.Size = new Size(639, 249);
             dataGridView1.TabIndex = 5;
             // 
-            // buttonPing
+            // menuStrip1
             // 
-            buttonPing.Location = new Point(713, 415);
-            buttonPing.Name = "buttonPing";
-            buttonPing.Size = new Size(75, 23);
-            buttonPing.TabIndex = 6;
-            buttonPing.Text = "Ping";
-            buttonPing.UseVisualStyleBackColor = true;
-            buttonPing.Click += buttonPing_Click;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, pingToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(869, 24);
+            menuStrip1.TabIndex = 7;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(38, 20);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // pingToolStripMenuItem
+            // 
+            pingToolStripMenuItem.Name = "pingToolStripMenuItem";
+            pingToolStripMenuItem.Size = new Size(43, 20);
+            pingToolStripMenuItem.Text = "Ping";
+            pingToolStripMenuItem.Click += pingToolStripMenuItem_Click;
             // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(buttonPing);
+            ClientSize = new Size(869, 489);
             Controls.Add(dataGridView1);
             Controls.Add(buttonFetchData);
             Controls.Add(dtpEndDate);
             Controls.Add(dtpStartDate);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "MainMenu";
             Text = "Bitcoin Analyzer";
             Load += MainMenu_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,6 +146,8 @@
         private DateTimePicker dtpEndDate;
         private Button buttonFetchData;
         private DataGridView dataGridView1;
-        private Button buttonPing;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem pingToolStripMenuItem;
     }
 }

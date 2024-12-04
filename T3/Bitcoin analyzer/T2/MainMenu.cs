@@ -99,8 +99,7 @@ namespace T2
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
-
-        private async void buttonPing_Click(object sender, EventArgs e)
+        private async void pingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var apiHelper = new ApiHelper();
 
@@ -114,6 +113,11 @@ namespace T2
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
