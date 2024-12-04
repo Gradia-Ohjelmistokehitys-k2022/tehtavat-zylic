@@ -1,0 +1,31 @@
+A)
+
+- CoinGecko:n API "From" ja "To" parametrit selittävät aikavälin, jolla haetaan hintoja ja niiden tietoja. Arvot käyttävät UNIX aikaa (sekuntteja vuodesta 1970 Tammikuu 1)
+
+------------------------------------
+
+B) 
+
+- https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from=1732096598&to=1733306198
+
+From =  Nykyisen ajan timestamppi - 14 päivää sekuntteina (14d x 24h x 60m x 60s)
+To = Nykyisen ajan timestamppi
+
+------------------------------------
+
+C)
+
+long currentTs = DateTimeOffset.UtcNow.ToUnixTimeSeconds(;
+long 2WeeksAgoTs = currentTs - (14 * 24 * 60 * 60);
+
+string apiUrl = $"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from={twoWeeksAgoTimestamp}&to={currentTimestamp}";
+
+using HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.GetAsync(apiUrl);
+response.EnsureSuccessStatusCode();
+
+string data = await response.Content.ReadAsStringAsync();
+
+Console.WriteLine(data)
+
+------------------------------------
