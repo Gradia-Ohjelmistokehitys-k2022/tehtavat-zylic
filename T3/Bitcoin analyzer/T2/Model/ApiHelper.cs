@@ -35,6 +35,6 @@ namespace T2.Classes
             dynamic parsedResponse = JsonConvert.DeserializeObject(content);
 
             return parsedResponse.gecko_says;
-        }
+        } 
     }
 }

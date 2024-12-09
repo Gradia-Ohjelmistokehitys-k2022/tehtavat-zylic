@@ -2,6 +2,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using T2.Classes;
+using T2.Controller;
 
 namespace T2
 {
@@ -59,8 +60,8 @@ namespace T2
                 long startTimestamp = new DateTimeOffset(start).ToUnixTimeSeconds();
                 long endTimestamp = new DateTimeOffset(end).ToUnixTimeSeconds();
 
-                var apiHelper = new ApiHelper();
-                var marketData = await apiHelper.FetchDataAsync(startTimestamp, endTimestamp);
+                var btcService = new BitcoinService();
+                var marketData = await btcService.FetchData(startTimestamp, endTimestamp);
 
                 if (marketData.Prices == null || !marketData.Prices.Any())
                 {
@@ -101,11 +102,11 @@ namespace T2
         }
         private async void pingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var apiHelper = new ApiHelper();
+            var btcService = new BitcoinService();
 
             try
             {
-                string response = await apiHelper.ApiPing();
+                string response = await btcService.TestApi();
 
                 MessageBox.Show(response, "Ping Response", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

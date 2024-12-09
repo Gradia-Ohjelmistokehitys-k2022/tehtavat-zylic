@@ -33,11 +33,9 @@
             dtpStartDate = new DateTimePicker();
             dtpEndDate = new DateTimePicker();
             buttonFetchData = new Button();
-            dataGridView1 = new DataGridView();
             menuStrip1 = new MenuStrip();
             exitToolStripMenuItem = new ToolStripMenuItem();
             pingToolStripMenuItem = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,15 +81,6 @@
             buttonFetchData.UseVisualStyleBackColor = true;
             buttonFetchData.Click += buttonFetchData_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 228);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(639, 249);
-            dataGridView1.TabIndex = 5;
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, pingToolStripMenuItem });
@@ -120,7 +109,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(869, 489);
-            Controls.Add(dataGridView1);
             Controls.Add(buttonFetchData);
             Controls.Add(dtpEndDate);
             Controls.Add(dtpStartDate);
@@ -131,7 +119,6 @@
             Name = "MainMenu";
             Text = "Bitcoin Analyzer";
             Load += MainMenu_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -145,7 +132,6 @@
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
         private Button buttonFetchData;
-        private DataGridView dataGridView1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem pingToolStripMenuItem;
